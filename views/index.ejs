@@ -10,7 +10,13 @@
 
 <body>
     <h3>All Chats!</h3>
-    
+
+    <form method="get" action="/chats/new">
+        <button type="submit ">New Chat</button>
+    </form>
+
+    <br>
+
     <% for (let chat of chats) { %>
         <div class="chat">
             <p>From: <%= chat.from %>

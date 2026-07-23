@@ -1,0 +1,134 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#25D366,#128C7E);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.container{
+    width:100%;
+    max-width:550px;
+}
+
+.form-card{
+    background:#fff;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+
+.form-card h2{
+    text-align:center;
+    color:#128C7E;
+    margin-bottom:8px;
+    font-size:30px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:35px;
+    font-size:15px;
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    color:#333;
+    font-size:15px;
+    font-weight:500;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #dcdcdc;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+    background:#fafafa;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#aaa;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#25D366;
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(37,211,102,.15);
+}
+
+textarea{
+    resize:vertical;
+    min-height:160px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#25D366;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#128C7E;
+    transform:translateY(-2px);
+}
+
+button:active{
+    transform:scale(.98);
+}
+
+.back-link{
+    display:inline-block;
+    margin-bottom:25px;
+    color:#128C7E;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.back-link:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:600px){
+
+    body{
+        padding:20px;
+    }
+
+    .form-card{
+        padding:25px;
+    }
+
+    .form-card h2{
+        font-size:24px;
+    }
+}
