@@ -10,12 +10,45 @@ body {
     padding: 40px;
 }
 
-h3 {
-    text-align: center;
-    margin-bottom: 30px;
+/* ---------- Header ---------- */
+
+.header {
+    width: 500px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h3 {
+    margin: 0;
     font-size: 32px;
     color: #075e54;
 }
+
+.header form {
+    margin: 0;
+}
+
+.new-chat-btn {
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.new-chat-btn:hover {
+    background: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Chat Card ---------- */
 
 .chat {
     width: 500px;
@@ -32,6 +65,14 @@ h3 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+/* ---------- Top Row ---------- */
+
+.chat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .chat p {
     font-size: 15px;
     color: #333;
@@ -43,6 +84,14 @@ h3 {
     font-weight: 600;
     color: #075e54;
 }
+
+.date {
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+}
+
+/* ---------- Message Bubble ---------- */
 
 .msg {
     background: #dcf8c6;
@@ -69,16 +118,39 @@ h3 {
     border-color: #dcf8c6 transparent transparent transparent;
 }
 
+/* ---------- Divider ---------- */
+
+hr {
+    width: 500px;
+    margin: 15px auto;
+    border: none;
+    border-top: 1px solid #d3d3d3;
+}
+
+/* ---------- Responsive ---------- */
+
 @media (max-width: 600px) {
+
     body {
         padding: 20px;
     }
 
-    .chat {
+    .header,
+    .chat,
+    hr {
         width: 100%;
     }
 
-    h3 {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header h3 {
         font-size: 26px;
+    }
+
+    .new-chat-btn {
+        width: 100%;
     }
 }

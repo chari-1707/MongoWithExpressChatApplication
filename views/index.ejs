@@ -9,30 +9,38 @@
 </head>
 
 <body>
-    <h3>All Chats!</h3>
 
-    <form method="get" action="/chats/new">
-        <button type="submit ">New Chat</button>
-    </form>
+    <div class="header">
+        <h3>All Chats</h3>
 
-    <br>
+        <form method="get" action="/chats/new">
+            <button class="new-chat-btn" type="submit">
+                + New Chat
+            </button>
+        </form>
+    </div>
 
     <% for (let chat of chats) { %>
-        <div class="chat">
-            <p>From: <%= chat.from %>
-            </p>
 
-            <div class="msg">
-                <p>
-                    <%= chat.message %>
-                </p>
+        <div class="chat">
+
+            <div class="chat-top">
+                <p><strong>From:</strong> <%= chat.from %></p>
+                <span class="date">
+                    <%= chat.created_at.toLocaleString() %>
+                </span>
             </div>
 
-            <p>Received by: <%= chat.to %>
-            </p>
+            <div class="msg">
+                <p><%= chat.message %></p>
+            </div>
+
+            <p><strong>To:</strong> <%= chat.to %></p>
+
         </div>
-        <hr>
-        <% } %>
+
+    <% } %>
+
 </body>
 
 </html>
