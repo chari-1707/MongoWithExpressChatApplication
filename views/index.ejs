@@ -13,7 +13,7 @@
     <div class="header">
         <h3>All Chats</h3>
 
-        <form method="get" action="/chats/new">
+        <form method="GET" action="/chats/new">
             <button class="new-chat-btn" type="submit">
                 + New Chat
             </button>
@@ -25,31 +25,36 @@
         <div class="chat">
 
             <div class="chat-top">
-                <p><strong>From:</strong>
-                    <%= chat.from %>
-                </p>
+                <p><strong>From:</strong> <%= chat.from %></p>
+
                 <span class="date">
                     <%= chat.created_at.toLocaleString() %>
                 </span>
             </div>
 
             <div class="msg">
-                <p>
-                    <%= chat.message %>
-                </p>
+                <p><%= chat.message %></p>
             </div>
 
-            <form action="/chats/<%= chat._id %>/edit" method="GET">
-                <button type="submit">Edit</button>
-            </form>
+            <div class="actions">
 
-            <p><strong>To:</strong>
-                <%= chat.to %>
-            </p>
+                <form action="/chats/<%= chat._id %>/edit" method="GET">
+                    <button class="edit-btn" type="submit">✏️ Edit</button>
+                </form>
+
+                <form action="/chats/<%= chat._id %>?_method=DELETE" method="POST">
+                    <button class="delete-btn" type="submit">
+                        🗑️ Delete
+                    </button>
+                </form>
+
+            </div>
+
+            <p><strong>To:</strong> <%= chat.to %></p>
 
         </div>
 
-        <% } %>
+    <% } %>
 
 </body>
 

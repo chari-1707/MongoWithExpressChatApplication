@@ -1,5 +1,6 @@
 const express = require("express");
 const chat = require("../models/chat.model.js");
+const { log } = require("node:console");
 
 
 const router = express.Router();
@@ -53,5 +54,13 @@ router.put("/:id", async (req, res) => {
 
     res.redirect("/chats");
 });
+
+//delete Route
+router.delete("/:id", async (req, res) => {
+    let { id } = req.params;
+    let deletedChat = await chat.findByIdAndDelete(id);
+    log(deletedChat)
+    res.redirect("/chats");
+})
 
 module.exports = router;

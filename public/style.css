@@ -13,7 +13,7 @@ body {
 /* ---------- Header ---------- */
 
 .header {
-    width: 500px;
+    width: 550px;
     margin: 0 auto 30px;
     display: flex;
     justify-content: space-between;
@@ -21,7 +21,6 @@ body {
 }
 
 .header h3 {
-    margin: 0;
     font-size: 32px;
     color: #075e54;
 }
@@ -34,78 +33,73 @@ body {
     background: #25d366;
     color: white;
     border: none;
-    padding: 10px 18px;
+    padding: 11px 20px;
     border-radius: 8px;
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: 0.25s ease;
 }
 
 .new-chat-btn:hover {
     background: #128c7e;
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
 /* ---------- Chat Card ---------- */
 
 .chat {
-    width: 500px;
+    width: 550px;
     margin: 20px auto;
     background: #fff;
     border-radius: 15px;
-    padding: 18px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    transition: transform .2s ease, box-shadow .2s ease;
+    padding: 20px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    transition: 0.25s ease;
 }
 
 .chat:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 
-/* ---------- Top Row ---------- */
+/* ---------- Top ---------- */
 
 .chat-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .chat p {
     font-size: 15px;
     color: #333;
-    margin: 8px 0;
-}
-
-.chat p:first-child,
-.chat p:last-child {
-    font-weight: 600;
-    color: #075e54;
+    margin: 6px 0;
 }
 
 .date {
-    font-size: 12px;
     color: #777;
+    font-size: 13px;
     font-style: italic;
 }
 
-/* ---------- Message Bubble ---------- */
+/* ---------- Message ---------- */
 
 .msg {
     background: #dcf8c6;
-    padding: 12px 16px;
+    padding: 14px 16px;
     border-radius: 12px;
-    margin: 15px 0;
     position: relative;
-    word-wrap: break-word;
+    margin-bottom: 18px;
 }
 
 .msg p {
     margin: 0;
-    color: #222;
     font-size: 16px;
+    color: #222;
+    line-height: 1.5;
 }
 
 .msg::after {
@@ -118,13 +112,54 @@ body {
     border-color: #dcf8c6 transparent transparent transparent;
 }
 
-/* ---------- Divider ---------- */
+/* ---------- Action Buttons ---------- */
 
-hr {
-    width: 500px;
-    margin: 15px auto;
+.actions {
+    display: flex;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.edit-btn,
+.delete-btn {
     border: none;
-    border-top: 1px solid #d3d3d3;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.edit-btn {
+    background: #2196f3;
+}
+
+.edit-btn:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    background: #e53935;
+}
+
+.delete-btn:hover {
+    background: #c62828;
+    transform: translateY(-2px);
+}
+
+/* ---------- Receiver ---------- */
+
+.chat > p:last-child {
+    margin-top: 10px;
+    color: #075e54;
+    font-weight: 600;
 }
 
 /* ---------- Responsive ---------- */
@@ -136,8 +171,7 @@ hr {
     }
 
     .header,
-    .chat,
-    hr {
+    .chat {
         width: 100%;
     }
 
@@ -147,10 +181,19 @@ hr {
     }
 
     .header h3 {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .new-chat-btn {
+        width: 100%;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .edit-btn,
+    .delete-btn {
         width: 100%;
     }
 }
