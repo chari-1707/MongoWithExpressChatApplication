@@ -32,4 +32,26 @@ router.post("/", (req, res) => {
     res.redirect("/chats")
 })
 
+// Show Edit Page
+router.get("/:id/edit", async (req, res) => {
+    const { id } = req.params;
+
+    const foundChat = await chat.findById(id);
+
+    res.render("edit.ejs", { foundChat });
+});
+
+// Update Chat
+// Update Route
+router.put("/:id", async (req, res) => {
+    const { id } = req.params;
+    const { message } = req.body;
+
+    await chat.findByIdAndUpdate(id, {
+        message: message
+    });
+
+    res.redirect("/chats");
+});
+
 module.exports = router;

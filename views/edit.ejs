@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Chat</title>
+
+    <link rel="stylesheet" href="/style3.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Edit Chat</h1>
+            <p class="subtitle">Modify your message and save the changes.</p>
+
+            <div class="chat-info">
+
+                <p><strong>Chat ID</strong></p>
+                <span>
+                    <%= foundChat._id %>
+                </span>
+
+                <div class="users">
+
+                    <div class="user">
+                        <label>From</label>
+                        <p>
+                            <%= foundChat.from %>
+                        </p>
+                    </div>
+
+                    <div class="arrow">➜</div>
+
+                    <div class="user">
+                        <label>To</label>
+                        <p>
+                            <%= foundChat.to %>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <form method="POST" action="/chats/<%= foundChat._id %>?_method=PUT">
+
+                <label class="msg-label">Message</label>
+
+                <textarea name="message" rows="8" required><%= foundChat.message %></textarea>
+
+                <div class="buttons">
+                    <a href="/chats" class="back-btn">← Back</a>
+
+                    <button type="submit" class="save-btn">
+                        💾 Save Changes
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
